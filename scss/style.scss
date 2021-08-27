@@ -2,14 +2,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,900&display=swap');
 
 ///Variáveis de cores
-$dark-grey:#888888;
+$dark-grey: #414141;
+$medium-grey:#888888;
 $light-grey: #c2c2c2;
 $primary: #39BF8A;
 $secondary: #27825E;
 $light: #ffffff;
 
+///Variáveis para interpolação
+$img-width: 40%;
+
 body {
     font-family: 'Roboto', sans-serif;
+    color: $dark-grey;
 }
 
 .header {
@@ -28,8 +33,8 @@ body {
         &__list {
             display: flex;
             justify-content: center;
-            border-top: 1px solid $dark-grey;
-            border-bottom: 1px solid $dark-grey;
+            border-top: 1px solid $medium-grey;
+            border-bottom: 1px solid $medium-grey;
             margin-left: auto;
             margin-right: auto;
             width: 80%;
@@ -48,7 +53,7 @@ body {
                 margin: auto;
                 height: 15px;
                 width: 1px;
-                background-color: $dark-grey;
+                background-color: $medium-grey;
             }
         }
 
@@ -107,19 +112,22 @@ body {
 
     &__tag {
         font-size: 14px;
-        padding: 6px 8px;
+        padding: 6px 16px;
         color: $light;
         background-color: $primary;
         margin: 0 10px;
+        border-radius: 20px;
     }
 
     &__details {
         border: 2px solid $light-grey;
+        border-radius: 20px;
         padding: 30px;
     }
 
     &__img {
         width: 100%;
+        border-radius: 16px;
     }
 
     &__description {
@@ -135,6 +143,7 @@ body {
         color: $primary;
         background-color: transparent;
         border: 2px solid $primary;
+        border-radius: 20px;
         padding: 10px 20px;
         transition: .3s;
         &:hover {
@@ -158,7 +167,7 @@ body {
 
     &__p {
         font-size: 14px;
-        color: $dark-grey;
+        color: $medium-grey;
         margin-top: 10px;
         margin-bottom: 0px;
     }
@@ -180,8 +189,6 @@ body {
         }
     }
 }
-
-
 
 .footer {
     padding: 20px 0;
@@ -211,7 +218,86 @@ body {
             margin: auto;
             height: 15px;
             width: 1px;
-            background-color: $dark-grey;
+            background-color: $medium-grey;
         }
+    }
+}
+
+.about {
+    width: 80%;
+    margin: 0 auto 40px;
+
+    &__title {
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin: 20px 0 10px;
+    }
+
+    .breadcrumb {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        &__link {
+            font-size: 12px;
+            text-decoration: none;
+            color: $primary;
+
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+        &__img {
+            width: 10px;
+            margin: 8px;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        font-style: italic;
+        color: $medium-grey;
+        width: 70%;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    &__split {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__img-container {
+        width: $img-width;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__img-logo {
+        width: 90%;
+    }
+
+    &__txt {
+        width: calc(100% - #{$img-width});
+    }
+
+    &__p {
+        font-size: 14px;
+        padding: 10px 20px;
+        color: $dark-grey;
     }
 }
