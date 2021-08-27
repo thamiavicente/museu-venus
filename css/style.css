@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,900&display=swap");
 body {
   font-family: "Roboto", sans-serif;
 }
@@ -51,6 +51,39 @@ body {
 
 .header__menu .menu__list .menu__links .menu__link:hover {
   color: #27825E;
+}
+
+.footer {
+  padding: 20px 0;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
+}
+
+.footer .footer__logo {
+  max-width: 170px;
+}
+
+.footer .footer__txt {
+  font-size: 14px;
+  margin: auto 40px 0;
+  position: relative;
+  font-style: italic;
+}
+
+.footer .footer__txt::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: -20px;
+  margin: auto;
+  height: 15px;
+  width: 1px;
+  background-color: #888888;
 }
 
 /*# sourceMappingURL=style.css.map */
