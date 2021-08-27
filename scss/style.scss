@@ -23,6 +23,11 @@ $img-width: 40%;
     list-style: none;
 }
 
+@mixin flx($property, $jty-cnt){
+    display: flex;
+    #{$property}: $jty-cnt;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark-grey;
@@ -260,8 +265,38 @@ body {
             margin-top: 6px;
         }
     }
+}
 
+.article {
+    &__img {
+        margin-bottom: 20px;
+        width: 80%;
+    }
 
+    &__details {
+        @include flx(justify-content, center);
+        align-items: center;
+    }
+
+    &__date {
+        margin: 0 10px;
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    &__tag {
+        font-size: 14px;
+        padding: 6px 16px;
+        color: $light;
+        background-color: $primary;
+        border-radius: 20px;
+        margin: 0 10px;
+    }
+
+    &__content {
+        font-size: 14px;
+        padding: 10px 20px;
+    }
 }
 
 .footer {
@@ -313,8 +348,7 @@ body {
     }
 
     .breadcrumb {
-        display: flex;
-        justify-content: center;
+        @include flx(justify-content, center);
         align-items: center;
 
         &__link {

@@ -206,6 +206,33 @@ body {
   margin-top: 6px;
 }
 
+.article__img {
+  margin-bottom: 20px;
+  width: 80%;
+}
+.article__details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.article__date {
+  margin: 0 10px;
+  font-size: 12px;
+  font-style: italic;
+}
+.article__tag {
+  font-size: 14px;
+  padding: 6px 16px;
+  color: #ffffff;
+  background-color: #39BF8A;
+  border-radius: 20px;
+  margin: 0 10px;
+}
+.article__content {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
 .footer {
   padding: 20px 0;
   display: flex;
