@@ -11,54 +11,60 @@ body {
     font-family: 'Roboto', sans-serif;
 }
 
-.header__menu {
+.header {
     font-weight: 700;
-}
 
-.header__logo {
-    text-align: center;
-    margin: 16px 0;
-}
+    &__logo {
+        text-align: center;
+        margin: 16px 0;
+    }
 
-.header__logo .header__img {
-    max-width: 150px;
-}
+    &__img {
+        max-width: 150px;
+    }
 
-.header__menu .menu__list {
-    display: flex;
-    justify-content: center;
-    border-top: 1px solid $dark-grey;
-    border-bottom: 1px solid $dark-grey;
-    margin-left: auto;
-    margin-right: auto;
-    width: 80%;
-    padding: 20px 0;
-}
+    .menu {
+        &__list {
+            display: flex;
+            justify-content: center;
+            border-top: 1px solid $dark-grey;
+            border-bottom: 1px solid $dark-grey;
+            margin-left: auto;
+            margin-right: auto;
+            width: 80%;
+            padding: 20px 0;
+        }
 
-.header__menu .menu__list .menu__links {
-    position: relative;
-}
+        &__links {
+            position: relative;
 
-.header__menu .menu__list .menu__links:not(:last-child)::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    right: -3px;
-    margin: auto;
-    height: 15px;
-    width: 1px;
-    background-color: $dark-grey;
-}
+            &:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                top: 0;
+                bottom: 0;
+                right: -3px;
+                margin: auto;
+                height: 15px;
+                width: 1px;
+                background-color: $dark-grey;
+            }
+        }
 
-.header__menu .menu__list .menu__links .menu__link {
-    padding: 0 26px;
-    color: $primary;
-    text-decoration: none;
-}
+        &__link {
+            padding: 0 26px;
+            color: $primary;
+            text-decoration: none;
 
-.header__menu .menu__list .menu__links .menu__link:hover {
-    color: $secondary;
+            &:hover {
+                color: $secondary;
+            }
+        }
+
+
+
+
+    }
 }
 
 .footer {
@@ -69,27 +75,27 @@ body {
     left: 50%;
     transform: translateX(-50%);
     bottom: 0;
-}
 
-.footer .footer__logo {
-    max-width: 170px;
-}
+    &__logo {
+        max-width: 170px;
+    }
 
-.footer .footer__txt {
-    font-size: 14px;
-    margin: auto 40px 0;
-    position: relative;
-    font-style: italic;
-}
+    &__txt {
+        font-size: 14px;
+        margin: auto 40px 0;
+        position: relative;
+        font-style: italic;
 
-.footer .footer__txt::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: -20px;
-    margin: auto;
-    height: 15px;
-    width: 1px;
-    background-color: $dark-grey;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -20px;
+            margin: auto;
+            height: 15px;
+            width: 1px;
+            background-color: $dark-grey;
+        }
+    }
 }
