@@ -28,6 +28,27 @@ $img-width: 40%;
     #{$property}: $jty-cnt;
 }
 
+@mixin for-phone-only {
+    @media (max-width: 767.98px) { @content; }
+}
+
+@mixin for-tablet-only {
+    @media (max-width: 768px) and (max-width: 1999.98px) { @content; }
+}
+
+@mixin for-desktop-only {
+    @media (min-width: 1200px) { @content; }
+}
+
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}
+
+///Funções
+@function calculateRem($size) {
+    @return $size / 16px * 1rem;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark-grey;
@@ -47,18 +68,33 @@ body {
 
     .menu {
         &__list {
-            display: flex;
-            justify-content: center;
+            @include flx(justify-content, center);
             border-top: 1px solid $medium-grey;
             border-bottom: 1px solid $medium-grey;
             margin-left: auto;
             margin-right: auto;
-            width: 96%;
-            padding: 20px 0;
+            @include for-phone-only {
+                width: 90%;
+                padding: 16px 0;
+                flex-wrap: wrap;
+            }
+
+            @include for-tablet-only {
+                width: 80%;
+                padding: 20px 0;
+            }
+
+            @include for-desktop-only {
+                width: 98%;
+                padding: 20px 0;
+            }
         }
 
         &__links {
             position: relative;
+            @include for-phone-only {
+                padding: 6px 0;
+            }
 
             &:not(:last-child)::after {
                 content: "";
@@ -86,13 +122,15 @@ body {
 }
 
 .main {
-    display: flex;
-    justify-content: center;
+    @include flx(justify-content, center);
     flex-wrap: wrap;
 
     &__content {
         width: 70%;
         padding: 40px 8px;
+        @include for-phone-only {
+            width: 100%;
+        }
     }
 
     &__post {
@@ -104,7 +142,7 @@ body {
 
     &__title {
         text-decoration: none;
-        font-size: 28px;
+        @include fontSize(28px);
         color: $primary;
         letter-spacing: 1.5;
 
@@ -122,12 +160,12 @@ body {
 
     &__date {
         margin: 0 10px 0 0;
-        font-size: 12px;
+        @include fontSize(12px);
         font-style: italic;
     }
 
     &__tag {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 6px 16px;
         color: $light;
         background-color: $primary;
@@ -149,12 +187,12 @@ body {
     &__description {
         padding: 20px 0 30px;
         max-width: 650px;
-        font-size: 14px;
+        @include fontSize(14px);
     }
 
     &__btn {
         text-decoration: none;
-        font-size: 16px;
+        @include fontSize(16px);
         letter-spacing: 1.5;
         color: $primary;
         background-color: transparent;
@@ -170,8 +208,7 @@ body {
     }
 
     &__info {
-        display: flex;
-        justify-content: space-between;
+        @include flx(justify-content, space-between);
         align-items: center;
         margin-top: 60px;
     }
@@ -182,7 +219,7 @@ body {
     }
 
     &__p {
-        font-size: 14px;
+        @include fontSize(14px);
         color: $medium-grey;
         margin-top: 10px;
         margin-bottom: 0px;
@@ -195,7 +232,7 @@ body {
 
     &__a {
         text-decoration: none;
-        font-size: 14px;
+        @include fontSize(14px);
         color: $primary;
         margin-top: 0px;
         margin-bottom: 10px;
@@ -230,8 +267,7 @@ body {
         }
 
         &__list {
-            display: flex;
-            justify-content: center;
+            @include flx(justify-content, center);
             flex-wrap: wrap;
             align-items: center;
             padding: 16px 0;
@@ -251,7 +287,7 @@ body {
         }
 
         &__post-title {
-            font-size: 14px;
+            @include fontSize(14px);
             color: $primary;
             @extend %no-decoration;
 
@@ -268,14 +304,32 @@ body {
 }
 
 .article {
+    width: 80%;
+    margin: 0 auto 40px;
+    @include for-phone-only {   
+        width: 90%;
+    }
+
+    &__title {
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin: 20px 0 10px;
+    }
+
     &__img {
         margin-bottom: 20px;
-        width: 80%;
+        width: 100%;
     }
 
     &__details {
         @include flx(justify-content, center);
         align-items: center;
+        margin-bottom: 30px;
     }
 
     &__date {
@@ -285,7 +339,7 @@ body {
     }
 
     &__tag {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 6px 16px;
         color: $light;
         background-color: $primary;
@@ -294,15 +348,18 @@ body {
     }
 
     &__content {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 10px 20px;
+    }
+
+    &__p {
+        padding: 6px 0px;
     }
 }
 
 .footer {
     padding: 20px 0;
-    display: flex;
-    justify-content: center;
+    @include flx(justify-content, center);
     position: relative;
     left: 50%;
     transform: translateX(-50%);
@@ -313,7 +370,7 @@ body {
     }
 
     &__txt {
-        font-size: 14px;
+        @include fontSize(14px);
         margin: auto 40px 0;
         position: relative;
         font-style: italic;
@@ -335,6 +392,9 @@ body {
 .about {
     width: 80%;
     margin: 0 auto 40px;
+    @include for-phone-only {   
+        width: 90%;
+    }
 
     &__title {
         text-align: center;
@@ -345,26 +405,6 @@ body {
         font-size: 30px;
         letter-spacing: 1px;
         margin: 20px 0 10px;
-    }
-
-    .breadcrumb {
-        @include flx(justify-content, center);
-        align-items: center;
-
-        &__link {
-            font-size: 12px;
-            text-decoration: none;
-            color: $primary;
-
-            &:hover {
-                color: $secondary;
-            }
-        }
-
-        &__img {
-            width: 10px;
-            margin: 8px;
-        }
     }
 
     &__img {
@@ -380,32 +420,63 @@ body {
         text-align: center;
         font-size: 18px;
         line-height: 24px;
+        @include for-phone-only {   
+            width: 90%;
+        }
+        @include for-tablet-only {   
+            width: 80%;
+        }
     }
 
     &__split {
-        display: flex;
-        justify-content: center;
+        @include flx(justify-content, center);
         flex-wrap: wrap;
         align-items: center;
     }
 
     &__img-container {
         width: $img-width;
-        display: flex;
-        justify-content: center;
+        @include flx(justify-content, center);
     }
 
     &__img-logo {
         width: 70%;
+        @include for-phone-only {   
+            width: 80%;
+        }
     }
 
     &__txt {
         width: calc(100% - #{$img-width});
+        @include for-phone-only {   
+            width: 90%;
+            text-align: center;
+        }
     }
 
     &__p {
-        font-size: 14px;
+        @include fontSize(14px);
         padding: 10px 20px;
         color: $dark-grey;
+    }
+}
+
+.breadcrumb {
+    @include flx(justify-content, center);
+    align-items: center;
+
+    &__link {
+        font-size: 12px;
+        text-decoration: none;
+        color: $primary;
+
+        &:hover {
+            color: $secondary;
+        }
+    }
+
+    &__img {
+        width: 10px;
+        margin: 8px;
     }
 }
