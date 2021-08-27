@@ -9,3 +9,12 @@ Seta:
 
 Museu:
 Foto de Charlotte May no Pexels https://www.pexels.com/pt-br/foto/pessoas-caminhando-dentro-do-edificio-5825359/
+
+Anita Malfatti:
+Foto de Edward Eyer no Pexels https://www.pexels.com/pt-br/foto/pintura-de-cores-variadas-empilhada-2883057/
+
+Mulheres renascentistas:
+Foto de Una Laurencic no Pexels https://www.pexels.com/pt-br/foto/mulher-sentada-no-otomano-diante-de-tres-pinturas-20967/
+
+Mulheres escultoras:
+Foto de cottonbro no Pexels https://www.pexels.com/pt-br/foto/foto-de-uma-mulher-sentada-ao-lado-da-estatua-3778550/
