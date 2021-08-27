@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,900&display=swap');
+
+$dark-grey:#888888;
+$light-grey: #c2c2c2;
+$primary: #39BF8A;
+$secondary: #27825E;
+
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.header__menu {
+    font-weight: 700;
+}
+
+.header__logo {
+    text-align: center;
+    margin: 16px 0;
+}
+
+.header__logo .header__img {
+    max-width: 150px;
+}
+
+.header__menu .menu__list {
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid $dark-grey;
+    border-bottom: 1px solid $dark-grey;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+    padding: 20px 0;
+}
+
+.header__menu .menu__list .menu__links {
+    position: relative;
+}
+
+.header__menu .menu__list .menu__links:not(:last-child)::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: -3px;
+    margin: auto;
+    height: 15px;
+    width: 1px;
+    background-color: $dark-grey;
+}
+
+.header__menu .menu__list .menu__links .menu__link {
+    padding: 0 26px;
+    color: $primary;
+    text-decoration: none;
+}
+
+.header__menu .menu__list .menu__links .menu__link:hover {
+    color: $secondary;
+}
