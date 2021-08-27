@@ -12,6 +12,17 @@ $light: #ffffff;
 ///Variáveis para interpolação
 $img-width: 40%;
 
+///Variável de estilo (placeholder selector)
+%no-decoration {text-decoration: none;}
+%with-decoration {font-weight: 700; color:$secondary;}
+
+///Mixins
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark-grey;
@@ -37,7 +48,7 @@ body {
             border-bottom: 1px solid $medium-grey;
             margin-left: auto;
             margin-right: auto;
-            width: 80%;
+            width: 96%;
             padding: 20px 0;
         }
 
@@ -49,9 +60,9 @@ body {
                 position: absolute;
                 top: 0;
                 bottom: 0;
-                right: -3px;
+                right: -4px;
                 margin: auto;
-                height: 15px;
+                height: 16px;
                 width: 1px;
                 background-color: $medium-grey;
             }
@@ -188,6 +199,69 @@ body {
             color: $secondary;
         }
     }
+
+    &__sidebar {
+        width: 25%;
+        padding: 40px 10px;
+    }
+
+    .sidebar {
+        &__top {
+            border: 2px solid $light-grey;
+            padding: 16px 20px;
+            border-radius: 20px;
+        }
+
+        &__title {
+            background-color: $primary;
+            text-align: center;
+            padding: 10px 20px;
+            margin: 0;
+            letter-spacing: 1.5px;
+        }
+
+        &__posts {
+            @include reset-list;
+        }
+
+        &__list {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 16px 0;
+
+            &:not(:last-child) {
+                border-bottom: 1px solid $light-grey;
+            }
+        }
+
+        &__img {
+            width: 40%;
+        }
+
+        &__details {
+            width: 50%;
+            padding-left: 10px;
+        }
+
+        &__post-title {
+            font-size: 14px;
+            color: $primary;
+            @extend %no-decoration;
+
+            &:hover {
+                @extend %with-decoration;
+            }
+        }
+
+        &__post-date {
+            font-size: 12px;
+            margin-top: 6px;
+        }
+    }
+
+
 }
 
 .footer {
@@ -216,7 +290,7 @@ body {
             bottom: 0;
             left: -20px;
             margin: auto;
-            height: 15px;
+            height: 16px;
             width: 1px;
             background-color: $medium-grey;
         }
@@ -288,7 +362,7 @@ body {
     }
 
     &__img-logo {
-        width: 90%;
+        width: 70%;
     }
 
     &__txt {
