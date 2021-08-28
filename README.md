@@ -18,3 +18,10 @@ Foto de Una Laurencic no Pexels https://www.pexels.com/pt-br/foto/mulher-sentada
 
 Mulheres escultoras:
 Foto de cottonbro no Pexels https://www.pexels.com/pt-br/foto/foto-de-uma-mulher-sentada-ao-lado-da-estatua-3778550/
+
+Exposição de mulheres:
+Photo by <a href="https://unsplash.com/@paulinel?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Pauline Loroy</a> on <a href="https://unsplash.com/?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
+
+Como visitar museu:
+Foto de Designecologist no Pexels https://www.pexels.com/pt-br/foto/cabeca-de-mulher-no-prato-2782919/
