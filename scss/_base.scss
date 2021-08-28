@@ -1,0 +1,55 @@
+///Importação de font do Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,900&display=swap');
+
+///Variáveis de cores
+$dark-grey: #414141;
+$medium-grey:#888888;
+$light-grey: #c2c2c2;
+$primary: #39BF8A;
+$secondary: #27825E;
+$light: #ffffff;
+
+///Variáveis para interpolação
+$img-width: 40%;
+
+///Variável de estilo (placeholder selector)
+%no-decoration {text-decoration: none;}
+%with-decoration {font-weight: 700; color:$secondary;}
+
+///Mixins
+@mixin reset-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+@mixin flx($property, $jty-cnt){
+    display: flex;
+    #{$property}: $jty-cnt;
+}
+
+@mixin for-phone-only {
+    @media (max-width: 767.98px) { @content; }
+}
+
+@mixin for-tablet-only {
+    @media (max-width: 768px) and (max-width: 1999.98px) { @content; }
+}
+
+@mixin for-desktop-only {
+    @media (min-width: 1200px) { @content; }
+}
+
+@mixin fontSize($size) {
+    font-size: calculateRem($size);
+}
+
+///Funções
+@function calculateRem($size) {
+    @return $size / 16px * 1rem;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    color: $dark-grey;
+}

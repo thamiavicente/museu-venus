@@ -1,0 +1,71 @@
+.about {
+    width: 80%;
+    margin: 0 auto 40px;
+    @include for-phone-only {   
+        width: 90%;
+    }
+
+    &__title {
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin: 20px 0 10px;
+    }
+
+    &__img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    &__intro {
+        font-style: italic;
+        color: $medium-grey;
+        width: 70%;
+        margin: 30px auto;
+        text-align: center;
+        font-size: 18px;
+        line-height: 24px;
+        @include for-phone-only {   
+            width: 90%;
+        }
+        @include for-tablet-only {   
+            width: 80%;
+        }
+    }
+
+    &__split {
+        @include flx(justify-content, center);
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    &__img-container {
+        width: $img-width;
+        @include flx(justify-content, center);
+    }
+
+    &__img-logo {
+        width: 70%;
+        @include for-phone-only {   
+            width: 80%;
+        }
+    }
+
+    &__txt {
+        width: calc(100% - #{$img-width});
+        @include for-phone-only {   
+            width: 90%;
+            text-align: center;
+        }
+    }
+
+    &__p {
+        @include fontSize(14px);
+        padding: 10px 20px;
+        color: $dark-grey;
+    }
+}

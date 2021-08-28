@@ -1,0 +1,31 @@
+.footer {
+    padding: 20px 0;
+    @include flx(justify-content, center);
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+
+    &__logo {
+        max-width: 170px;
+    }
+
+    &__txt {
+        @include fontSize(14px);
+        margin: auto 40px 0;
+        position: relative;
+        font-style: italic;
+
+        &::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: -20px;
+            margin: auto;
+            height: 16px;
+            width: 1px;
+            background-color: $medium-grey;
+        }
+    }
+}

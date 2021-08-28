@@ -1,0 +1,53 @@
+.article {
+    width: 80%;
+    margin: 0 auto 40px;
+    @include for-phone-only {   
+        width: 90%;
+    }
+
+    &__title {
+        text-align: center;
+        padding: 20px;
+    }
+
+    &__h1 {
+        font-size: 30px;
+        letter-spacing: 1px;
+        margin: 20px 0 10px;
+    }
+
+    &__img {
+        margin-bottom: 20px;
+        width: 100%;
+    }
+
+    &__details {
+        @include flx(justify-content, center);
+        align-items: center;
+        margin-bottom: 30px;
+    }
+
+    &__date {
+        margin: 0 10px;
+        font-size: 12px;
+        font-style: italic;
+    }
+
+    &__tag {
+        @include fontSize(14px);
+        padding: 6px 16px;
+        color: $light;
+        background-color: $primary;
+        border-radius: 20px;
+        margin: 0 10px;
+    }
+
+    &__content {
+        @include fontSize(14px);
+        padding: 10px 20px;
+    }
+
+    &__p {
+        padding: 6px 0px;
+    }
+}
