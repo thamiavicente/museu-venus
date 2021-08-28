@@ -1,7 +1,7 @@
-///Importação de font do Google Fonts
+///Google Fonts import
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,700;1,400;1,900&display=swap');
 
-///Variáveis de cores
+///Colors variables
 $dark-grey: #414141;
 $medium-grey:#888888;
 $light-grey: #c2c2c2;
@@ -9,10 +9,10 @@ $primary: #39BF8A;
 $secondary: #27825E;
 $light: #ffffff;
 
-///Variáveis para interpolação
+///Interpolation variables
 $img-width: 40%;
 
-///Variável de estilo (placeholder selector)
+///Placeholder selector
 %no-decoration {text-decoration: none;}
 %with-decoration {font-weight: 700; color:$secondary;}
 
@@ -44,7 +44,7 @@ $img-width: 40%;
     font-size: calculateRem($size);
 }
 
-///Funções
+///Functions
 @function calculateRem($size) {
     @return $size / 16px * 1rem;
 }
@@ -59,7 +59,7 @@ $layout-margin-size: 12px;
     %half-margin-#{$direction} {margin-#{$direction}: $layout-margin-size / 2;}
 }
 
-///Estilos gerais
+///General style
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark-grey;
