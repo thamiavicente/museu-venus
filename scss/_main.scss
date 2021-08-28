@@ -30,13 +30,12 @@
 
     &__subtitle {
         display: flex;
-        margin-top: 10px;
-        margin-bottom: 20px;
+        @extend %default-margin-top, %double-margin-bottom;
         align-items: center;
     }
 
     &__date {
-        margin: 0 10px 0 0;
+        @extend %no-margin-top, %no-margin-bottom, %no-margin-left, %default-margin-right;
         @include fontSize(12px);
         font-style: italic;
     }
@@ -46,7 +45,7 @@
         padding: 6px 16px;
         color: $light;
         background-color: $primary;
-        margin: 0 10px;
+        @extend %no-margin-top, %no-margin-bottom, %default-margin-left, %default-margin-right;
         border-radius: 20px;
     }
 
@@ -98,8 +97,7 @@
     &__p {
         @include fontSize(14px);
         color: $medium-grey;
-        margin-top: 10px;
-        margin-bottom: 0px;
+        @extend %default-margin-top, %no-margin-bottom;
     }
 
     &__comments {
@@ -111,8 +109,7 @@
         text-decoration: none;
         @include fontSize(14px);
         color: $primary;
-        margin-top: 0px;
-        margin-bottom: 10px;
+        @extend %default-margin-top, %no-margin-bottom;
         
         &:hover {
             color: $secondary;
@@ -135,7 +132,7 @@
             background-color: $primary;
             text-align: center;
             padding: 10px 20px;
-            margin: 0;
+            @extend %no-margin-top, %no-margin-bottom, %no-margin-right, %no-margin-left;
             letter-spacing: 1.5px;
         }
 
@@ -175,7 +172,7 @@
 
         &__post-date {
             font-size: 12px;
-            margin-top: 6px;
+            @extend %half-margin-top;
         }
     }
 }

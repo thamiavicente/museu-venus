@@ -49,6 +49,17 @@ $img-width: 40%;
     @return $size / 16px * 1rem;
 }
 
+$directions: top, bottom, left, right;
+$layout-margin-size: 12px;
+
+@each $direction in $directions {
+    %no-margin-#{$direction} {margin-#{$direction}: 0;}
+    %default-margin-#{$direction} {margin-#{$direction}: $layout-margin-size;}
+    %double-margin-#{$direction} {margin-#{$direction}: $layout-margin-size * 2;}
+    %half-margin-#{$direction} {margin-#{$direction}: $layout-margin-size / 2;}
+}
+
+///Estilos gerais
 body {
     font-family: 'Roboto', sans-serif;
     color: $dark-grey;
